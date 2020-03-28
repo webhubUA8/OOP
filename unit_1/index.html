@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Unit 1</title>
+</head>
+<body>
+   <section>
+      <p><b>Task 1.</b> Итак, первая задача. Мы строим интернет-магазин строительных материалов. У нас есть товары. Именно на основе товаров мы и будем строить объекты для работы и расширять их с помощью наследования.
+
+         Товар имеет характеристики (свойства). Сразу уточню. Каждый объект, вы создаете в отдельном файле. Имя файла - имя объекта.
+         
+         Объект goods (goods.js). Goods имеет свойства:
+         
+             <pre>
+               price (double)
+               title (string)
+               image (text)
+               producer (text)
+               country (int)
+               description (text)
+               weight (kg)
+               height (mm)
+               width (mm)
+               depth (mm)
+               unit (единица продажи) (double)
+             </pre>
+         
+         и метод getCost (count) который возвращает стоимость количества единиц товара. Ввели 5 - возвратит стоимость 5 единиц.
+         
+         Создайте данный объект (протестируйте самостоятельно - создайте, заполните, проверьте метод).</p>
+      <div class="out-1"></div>
+      <hr>
+   </section>
+
+   <section>
+      <p><b>Task 2.</b>На основании объекта goods создадим наследника ( через proto ), который используется для описания плитки (для пола, дорожек, стен...) название - tile (tile.js).
+
+         Объект tile дополните свойствами
+         
+             <pre>
+               material (string)
+               type (string)
+               size_x (mm)
+               size_y (mm)
+               outdoor (boolean)
+               color (string)
+               cover (string)
+               images (array) - массив изображений ['pic1', 'pic2']
+             </pre>
+         
+         Дополните объект двумя методами
+         
+             <pre>
+                метод imperialSize () который возвращает массив [this.size_x, this.size_y] преобразованных размеров в дюймы ( в одном дюйме 25.4 миллиметров). Значения должны быть округлены до сотых.
+                метод isSquare () - возвращает true или false в зависимости от того, является ли плитка квадратная.
+               
+             </pre>
+         
+         Создайте данный объект (протестируйте самостоятельно - создайте, заполните, проверьте методы).</p>
+      <div class=""></div>
+      <hr>
+   </section>
+
+   <section>
+      <p><b>Task 3.</b>На основании объекта goods создадим наследника ( через proto ), который используется для описания ламината (для пола, дорожек, стен...) название - laminate(laminatejs).
+
+         Объект laminate дополните свойствами
+         <pre>
+            color (string)
+            thickness (mm)
+            suitable (string)
+            finish (string) ex: gloss, rustic, smooth, textured...
+            flitting_mechanism (string) ex 1click2go, drop loc, fold down...
+            guaranteed (int)
+            resistance (int) ex: 31, 32, 33, 54
+            unit_coverage (m2) ex: 2.005
+         </pre>
+         В данном объекте размеры одинаковы для всех и равны:
+         <pre>
+            size_x = 1292 (mm)
+            size_y = 194 (mm)
+         </pre>
+         Дополните объект двумя методами
+
+         метод getBoard(square) int принимает параметр площади в m2 и возвращает количество досок ламината.
+
+         метод getUnitCount(square) int - принимает параметр в m2 и возвращает количество полных упаковок (округление в большую сторону).
+
+         Создайте данный объект (протестируйте самостоятельно - создайте, заполните, проверьте методы).
+               </p>
+      <div class=""></div>
+      <hr>
+   </section>
+
+   <section>
+         <p><b>Task 4.</b>
+            Мы упустили важный параметр у каждого товара есть уникальный   номер артикул. добавим art в объект goods. Убедитесь, что он  стал доступен и в laminate и в tile.
+         </p>
+      <div class=""></div>
+      <hr>
+   </section>
+
+   <section>
+      <p><b>Task 5.</b>
+         Давайте пощупаем полиморфизм - в объекте laminate заменим свойство img на массив. Теперь у нас везде есть свойства img, однако они реализованы по-разному. В дальнейшем поработаем с этим.
+      </p>
+      <div class=""></div>
+      <hr>
+   </section>
+   <script src="goods.js"></script>
+   <script src="tile.js"></script>
+   <script src="laminate.js"></script>
+   <script src="app.js"></script>
+</body>
+</html>
